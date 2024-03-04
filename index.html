@@ -4,6 +4,39 @@
 <script>
 
 </script>
+function main() {
+    var reeks = createArray(50);
+    var cijfer, lengte;
+
+    for (lengte = 0; lengte < reeks.length; lengte++) {
+        cijfer = Math.floor(Math.random() * 99);
+        reeks[lengte] = cijfer;
+    }
+
+    var zoekterm = Number(window.prompt('Welk cijfer zou u graag willen opzoeken in de lijst?'));
+
+    var plek = -1;
+
+    for (lengte = 0; lengte < reeks.length; lengte++) {
+        if (reeks[lengte] == zoekterm) {
+            plek = lengte;
+            break; // We hebben het cijfer gevonden, dus stop de lus
+        }
+    }
+
+    if (plek != -1) {
+        window.alert("Het cijfer staat erin op de plek " + plek);
+    } else {
+        window.alert("Sorry, het gekozen cijfer staat er niet in");
+    }
+}
+
+// Een functie om een array van een bepaalde lengte te maken, gevuld met nullen
+function createArray(length) {
+    var arr = new Array(length);
+    arr.fill(0); // Vult de array met nullen
+    return arr;
+}
 
 
 
