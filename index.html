@@ -1,8 +1,9 @@
 <html>         
 <body>
 <script>
-
-    var reeks = newArray(50);
+    //in dit programma wordt er een lijst aangemaakt met random getallen en dan zegt u een getal en zegt het programma of het getal in de lijst staat of niet//
+ //de cijfers zijn tussen de 0 en 50
+    var reeks = new Array(50);
     var cijfer, lengte;
 
     for (lengte = 0; lengte <= 49; lengte++) {
@@ -12,6 +13,7 @@
     var zoekterm;
 
     window.alert("Welk cijfer zou u graag willen opzoeken in de lijst?");
+    //Het invullen van een cijfer//
     zoekterm = Number(window.prompt('Enter a value for zoekterm'));
     var x, plek;
 
@@ -28,6 +30,7 @@
             }
         }
     }
+    //het eindresultaat//
     if (x == 1) {
         window.alert("Het cijfer staat erin op de plek " + plek);
     } else {
@@ -35,7 +38,7 @@
             window.alert("sorry, het gekozen cijfer staat er niet in");
         }
     }
-   } 
+   
 </script>
 </body>
 </html>
