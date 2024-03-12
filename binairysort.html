@@ -1,0 +1,34 @@
+<html>
+    <body>
+        <script>
+            
+    // In dit programma gaat u een gatel proberen te raden tussen de 0 en de 50 het programma geeft hints door te zeggen hoger of lager
+    var aantalkeergeraden;
+
+    aantalkeergeraden = 1;
+    var i;
+
+    // dat er een random getal wordt gekozen tussen 0 en 50
+    i = Math.floor(Math.random() * 50);
+    window.alert("Geef een cijfer tussen de 0 en de 50");
+    var raadgetal;
+
+    // hier kan de persoon een cijfer kiezen
+    raadgetal = Number(window.prompt('Enter a value for raadgetal'));
+
+    // Hier kun je door raden totdat het goede getal is gekozen
+    while (raadgetal != i) {
+        aantalkeergeraden = aantalkeergeraden + 1;
+        if (i > raadgetal) {
+            window.alert("Het getal is hoger dan het nu gekozen getal.");
+        } else {
+            window.alert("Het getal is lager dan het nu gekozen getal.");
+        }
+        window.alert("Raad het getal nog een keer");
+        raadgetal = Number(window.prompt('Enter a value for raadgetal'));
+    }
+
+
+        </script>
+    </body>
+</html>
