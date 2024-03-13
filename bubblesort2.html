@@ -1,0 +1,62 @@
+<html>
+    <body>
+        <script> 
+        
+    // in dit programma wordt een reeks aan getallen in de goede volgorde gezet.
+    var i, rijgrootte;
+
+    window.alert("Hoe groot zou u de rij wilen hebben?");
+
+    // Hier wordt ingevuld hoeveel getallen in de rij komen.
+    rijgrootte = Number(window.prompt('Enter a value for rijgrootte'));
+    var cijferrij = new Array(rijgrootte);
+
+    // welke getallen in de rij worden gezet, dat zijn getallen tussen de 0 en de 100.
+    for (i = 0; i <= rijgrootte - 1; i++) {
+        cijferrij[i] = Math.floor(Math.random() * 100);
+    }
+    alert(cijferrij);
+    window.alert("De rij ziet er zo uit.");
+    for (i = 0; i <= rijgrootte - 2; i++) {
+        window.alert(cijferrij[i].ToString() + " ");
+    }
+    window.alert(cijferrij[rijgrootte - 1]);
+    var temp, teller;
+
+    // Hier wordt de rij met de manier van bubbelsort in de goede volgorde gezet.
+    var volgorde;
+
+    window.alert("Wil u van groot naar klein of van klein naar groot?");
+    volgorde = window.prompt('Enter a value for volgorde');
+    if (volgorde == "klein naar groot") {
+        for (teller = 0; teller <= rijgrootte; teller++) {
+            for (i = 0; i <= rijgrootte - 2; i++) {
+                if (cijferrij[i] > cijferrij[i + 1]) {
+                    temp = cijferrij[i];
+                    cijferrij[i] = cijferrij[i + 1];
+                    cijferrij[i + 1] = temp;
+                }
+            }
+        }
+    } else {
+        for (teller = 0; teller <= rijgrootte; teller++) {
+            for (i = 0; i <= rijgrootte - 2; i++) {
+                if (cijferrij[i] < cijferrij[i + 1]) {
+                    temp = cijferrij[i];
+                    cijferrij[i] = cijferrij[i + 1];
+                    cijferrij[i + 1] = temp;
+                }
+            }
+        }
+    }
+    window.alert("De rij is gesorteerd en ziet er nu zo uit.");
+
+    // de rij in de goede volgorde
+    for (i = 0; i <= rijgrootte - 1; i++) {
+        window.alert(cijferrij[i].ToString() + " ");
+    }
+
+
+        </script>
+    </body>
+</html>
