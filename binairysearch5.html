@@ -1,0 +1,56 @@
+<html>
+    <body>
+        <script>
+            var cijfer, aantal, teller1, teller2, tussenmap, i, gekozencijfer, plek, start, eind, midden, middelstegetal;
+            var antwoord;
+            var rij = new Array(50);
+
+            // Er wordt een rij gemaakt van 50 cijfers. De cijfers worden random gekozen van 0 tot 100
+            for (aantal = 0; aantal <= 49; aantal++) {
+                cijfer = Math.floor(Math.random() * 100); // Veranderd naar 100
+                rij[aantal] = cijfer;
+            }
+
+            // Hier wordt de rij gesorteerd
+            for (teller2 = 1; teller2 <= aantal; teller2++) {
+                for (teller1 = 0; teller1 <= aantal - 2; teller1++) {
+                    if (rij[teller1] > rij[teller1 + 1]) {
+                        tussenmap = rij[teller1];
+                        rij[teller1] = rij[teller1 + 1];
+                        rij[teller1 + 1] = tussenmap;
+                    }
+                }
+            }
+            window.alert("Welk cijfer zou u willen zoeken in de rij? U kunt kiezen uit cijfers tussen 0-100.");
+
+            // Voer hier een cijfer in dat u zou willen zoeken
+            gekozencijfer = Number(window.prompt('Enter a value for gekozencijfer'));
+            start = 0;
+            eind = rij.length - 1;
+            var eindantwoord;
+
+            eindantwoord = false;
+            while (start <= eind) {
+                midden = Math.floor((start + eind) / 2); // Juiste berekening van het midden
+                if (gekozencijfer == rij[midden]) {
+                    start = eind + 1;
+                    eindantwoord = true;
+                } else {
+                    if (gekozencijfer > rij[midden]) {
+                        start = midden + 1;
+                    } else {
+                        eind = midden - 1;
+                    }
+                }
+            }
+            plek = midden + 1;
+
+            // Het eindantwoord
+            if (eindantwoord) {
+                window.alert("Cijfer " + gekozencijfer + " staat in de rij op plek " + plek);
+            } else {
+                window.alert(gekozencijfer + " staat helaas niet in de rij.");
+            }
+        </script>
+    </body>
+</html>
