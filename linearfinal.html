@@ -1,0 +1,51 @@
+<html>
+    <body>
+        <script>
+            
+    // In dit programma wordt er een cijferlijst gemaakt. U kan dan een cijfer kiezen en dan wordt er gekeken of het cijfer erin staat.
+    var reeks = new Array(50);
+    var getal, lengte;
+
+    // hier wordt een rij van 50 cijfers gemaakt met ramdam cijfer van 0 tot 99
+    for (lengte = 0; lengte <= 49; lengte++) {
+        getal = Math.floor(Math.random() * 99);
+        reeks[lengte] = getal;
+    }
+    var zoeken;
+
+    window.alert("Welk getal zou u uit de lijst willen opzoeken?");
+
+    // Hier wordt het cijfer ingevuld wat u zou willen zoeken
+    zoeken = Number(window.prompt('Enter a value for zoeken'));
+    var x;
+
+    x = 0;
+    var plek;
+
+    // Er wordt gekeken of het getal erin staat en op welke plek
+    while (x == 0) {
+        for (lengte = 0; lengte <= 49; lengte++) {
+            if (reeks[lengte] == zoeken) {
+                x = 1;
+                plek = lengte;
+            } else {
+                if (lengte == 49 && x == 0) {
+                    x = -1;
+                }
+            }
+        }
+    }
+
+    // de eind antwoorden
+    if (x == 1) {
+        window.alert("Het getal staat erin en staat op plek " + plek);
+    } else {
+        if (x == -1) {
+            window.alert("Sorry maar het getal staat er niet in.");
+        }
+    }
+
+
+        </script>
+    </body>
+</html>
